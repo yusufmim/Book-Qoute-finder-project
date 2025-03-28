@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House of Wisdom</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&family=Jersey+10&family=Montserrat:wght@100;200;400;500;600&family=Playfair+Display:wght@500&family=Raleway:wght@200;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+                       <!---------NAVBAR---------->
+
+
+    <ul class="Navbar">
+      <h1 id="logo"><a href="index.html">House of Wisdom</a></h1>
+     <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+        <div class="nav-items">
+            <li><a href="index.html">HOME</a> </li>
+            <li><a href="about.html">ABOUT US</a> </li>
+            <li><a href="#contactpage">CONTACT</a> </li>
+        </div>
+    </ul>
+    
+
+                           <!---------HEADER SECTION---------->
+
+                           <header>
+                            <div class="container1">
+                              <!-- Search Bar Section -->
+                              <div class="inner-container">
+                                <h1>Search Books</h1>
+                                <input type="text" id="searchInput" placeholder="Search...">
+                                <button onclick="searchFunction()">Search</button>
+                              </div>
+                          
+                              <!--  Search results -->
+                              <div id="bookResults">
+                                <!-- Results will be dynamically inserted here -->
+                              </div>
+                            </div>
+                          </header>
+                          
+                             <!--------------------Alert Box----------------->
+
+                        <!---------ABOUT ME SECTION---------->
+
+    <section class="about-me">
+        <div class="about-me-container">
+       <div> <h1>ABOUT US</h1> </div>
+       
+       <p>We are passionate about bringing the world of books and inspiration to your fingertips. Our platform offers a vast collection of books and quotes to explore, inspire, and enrich your mind. Whether you're looking for your next read or a motivational quote, we aim to provide endless possibilities for your literary journey.</p>
+       
+       <div class="button-container">
+           <a href="about.html"> <button>Learn More <i class="fa-solid fa-circle-arrow-right fa-lg"></i></button> </a>
+        
+        </div>
+        
+    </div>
+    </section>
+
+
+                       <!---------RANDOM QUOUTE SECTION---------->
+
+                       <div class="quote-container">
+                        <button id="quoteButton">Get Random Quote</button>
+                        <p id="quoteDisplay">Click the button to get a quote!</p>
+                    </div>
+                    
+
+
+                        
+
+
+
+
+
+                        <!---------INVITATION SECTION---------->
+<div class="contact-container">
+<div class="contact-header">
+<h1>Discover a World of Books & Inspiring Quotes! ✨</h1>
+<p>Explore a vast collection of books and thought-provoking quotes, all at your fingertips! Whether you're searching for your next great read or a spark of wisdom, we've got you covered. Browse online, get inspired, and if you'd love to visit us in person, feel free to contact us—we’d love to welcome you to our store! 📖💬</p>
+</div>
+</div>
+    
+                
+                          <!---------CONTACT SECTION---------->
+<section id="contactpage">
+                          <div class="background">
+                            <div class="container">
+                              <div class="screen">
+                                <div class="screen-body">
+                                  <div class="screen-body-item left">
+                                    <div class="app-title">
+                                      <span>CONTACT</span>
+                                      <span>US</span>
+                                    </div>
+                                    <div class="app-contact">CONTACT INFO : +254 743 380 615</div>
+                                  </div>
+                                  <div class="screen-body-item">
+                                    <div class="app-form">
+                                      <div class="app-form-group">
+                                        <input class="app-form-control" placeholder="NAME*">
+                                      </div>
+                                      <div class="app-form-group">
+                                        <input class="app-form-control" placeholder="EMAIL*">
+                                      </div>
+                                      <div class="app-form-group">
+                                        <input class="app-form-control" placeholder="CONTACT NO*">
+                                      </div>
+                                      <div class="app-form-group message">
+                                        <input class="app-form-control" placeholder="MESSAGE*">
+                                      </div>
+                                      <div class="app-form-group buttons">
+                                        
+                                        <button class="app-form-button">SEND</button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </section>
+
+
+                        <!---------FOOTER SECTION---------->
+
+                        <footer class="footer">
+                            <div class="footer-container">
+                              <div class="footer-left">
+                                <h3>About Us</h3>
+                                <p>We are passionate about bringing the world of books and inspiration to your fingertips.</p>
+                              </div>
+                              <div class="footer-center">
+                                <h3>Quick Links</h3>
+                                <ul>
+                                  <li><a href="index.html">Home</a></li>
+                                  <li><a href="about.html">About Me</a></li>
+                                  <li><a href="index.html#contactpage">Contact</a></li>
+                                </ul>
+                              </div>
+                              <div class="footer-right">
+                                <h3>Contact</h3>
+                                <ul>
+                                  <li>Email: <a href="mailto:example@example.com">example@example.com</a></li>
+                                  <li>Phone: +254-712345678</li>
+                                  <li>Location: Nairobi, Kenya</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="footer-bottom">
+                              <p>&copy; 2025 Toby. All rights reserved.</p>
+                            </div>
+                          </footer>
+                          
+
+<!-------------------JAVASCRIPT---------------->
+<script src="script.js"></script>
+                  
+</body>
+</html>
