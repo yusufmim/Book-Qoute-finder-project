@@ -374,7 +374,7 @@ button:hover {
     min-height: 260px;
   background-color: #28282b;
     color: #FFffff;
-    padding: 27px;
+    padding: 25px;
   }
   
   .about-me-container{
@@ -392,7 +392,7 @@ button:hover {
   .about-me h1{
       display: inline-block; /* Makes the border fit the width of the text */
       position: relative;
-      font-size: 31px;
+      font-size: 25px;
       margin-bottom: 15px;
   }
   .about-me p{
@@ -427,7 +427,7 @@ button:hover {
     width: 180px;
     height: 50px;
     border-radius: 12px;
-    background-color: #FFC857;
+    background-color: #87ceeb;
     color: #1A1A1A;
     border: 2px solid #1A1A1A;
     transition: background-color 0.3s ease;
@@ -436,8 +436,8 @@ button:hover {
   
   .button-container button:hover{
     background-color: #1A1A1A;
-    color: #FFC857;  
-    transition: background-color 0.4s ease-in-out;
+    color: #fff;  
+    transition: background-color 0.2s ease-in-out;
   }
   
   /* Responsive design adjustments */
@@ -498,7 +498,7 @@ button:hover {
 }
 
 .quoteofthemoment h1 {
-  font-size: 26px;
+  font-size: 24px;
 }
 /* Quote Content */
 .quoteofthemoment p, .quote-container p {
@@ -618,7 +618,7 @@ button:hover {
   color: #ffd700;
 }
 
-  
+  /*===========SIGN IN/UP PAGE=========*/
   /*===========INVITATION SECTION=========*/
   
   .contact-container {
@@ -971,4 +971,81 @@ button:hover {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+}
+
+
+/*===========SIGN IN/UP PAGE=========*/
+.sign-in-container{
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.auth-container {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  margin: auto;
+  max-width: 400px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #1a1a1a;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.auth-form button {
+  width: 95%;
+  padding: 12px;
+  margin: auto;
+  background-color: #87ceeb;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.auth-form button:hover {
+  background-color: #28282b;
+  color: #87ceeb;
+}
+
+.auth-form p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.auth-form span {
+  color: #87ceeb;
+  cursor: pointer;
+}
+
+.auth-form span:hover {
+  text-decoration: underline;
+}
+
+#sign-up-form a{
+  text-decoration: none;
+  color: #87ceeb;
+}
+#sign-up-form a:hover {
+  text-decoration: none;
+}
+
+#sign-in-form a{
+text-decoration: none;
+color: #87ceeb;
 }

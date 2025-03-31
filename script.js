@@ -65,7 +65,7 @@ function displayBooks(books) {
 document.getElementById('quoteButton').addEventListener('click', fetchRandomQuote);
 
 function fetchRandomQuote() {
-    fetch('https://api.quotable.io/random')
+    fetch('https://github.com/lukePeavey/quotable')
         .then(response => response.json())
         .then(data => {
             const quoteText = data.content;
@@ -80,3 +80,28 @@ function fetchRandomQuote() {
         });
 }
 
+//SIGN UP PAGE CODE
+
+function toggleForm() {
+  const signUpForm = document.getElementById("sign-up-form");
+  const signInForm = document.getElementById("sign-in-form");
+
+  if (signUpForm.style.display === "none") {
+      signUpForm.style.display = "block";
+      signInForm.style.display = "none";
+  } else {
+      signUpForm.style.display = "none";
+      signInForm.style.display = "block";
+  }
+}
+
+// Handle form submission for Sign In
+document.getElementById("signin").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting the traditional way
+
+  const email = event.target.querySelector("input[type='email']").value;
+  const password = event.target.querySelector("input[type='password']").value;
+
+  // Here, you can add code to send the login data to the server
+  alert(`Signed in with email: ${email}, password: ${password}`);
+});
