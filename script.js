@@ -1,58 +1,61 @@
 // Function to handle search
 function searchFunction() {
-    // Get the search query
-    const query = document.getElementById("searchInput").value.trim();
-    
-    if (!query) {
-      alert("Please enter a search term.");
-      return;
-    }
+  // Get the search query
+  const query = document.getElementById("searchInput").value.trim();
   
-    // Construct the API URL for Open Library
-    const apiUrl = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=10`;
-  
-    // Fetch data from Open Library API
-    fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        // Check if we have books
-        if (data.docs.length > 0) {
-          displayBooks(data.docs);
-        } else {
-          document.getElementById("bookResults").innerHTML = "<p>No books found.</p>";
-        }
-      })
-      .catch(error => {
-        console.error("Error fetching data:", error);
-        alert("An error occurred while fetching books.");
-      });
+  if (!query) {
+    alert("Please enter a search term.");
+    return;
   }
-  
-  // Function to display books
-  function displayBooks(books) {
-    const resultsContainer = document.getElementById("bookResults");
-    
-    // Clear previous results
-    resultsContainer.innerHTML = "";
-  
-    // Loop through the books and display them
-    books.forEach(book => {
-      const bookItem = document.createElement("div");
-      bookItem.classList.add("book-item");
-  
-      const bookTitle = book.title ? book.title : "Untitled";
-      const bookAuthor = book.author_name ? book.author_name.join(", ") : "Unknown Author";
-      const bookCover = book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : "https://via.placeholder.com/150";
-      
-      bookItem.innerHTML = `
-        <img src="${bookCover}" alt="Book Cover">
-        <h3>${bookTitle}</h3>
-        <p><strong>Author:</strong> ${bookAuthor}</p>
-      `;
-      
-      resultsContainer.appendChild(bookItem);
+
+  // Construct the API URL for Open Library
+  const apiUrl = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=10`;
+
+  // Fetch data from Open Library API
+  fetch(apiUrl)
+    .then(response => response.json())
+    .then(data => {
+      // Check if we have books
+      if (data.docs.length > 0) {
+        displayBooks(data.docs);
+      } else {
+        document.getElementById("bookResults").innerHTML = "<p>No books found.</p>";
+      }
+    })
+    .catch(error => {
+      console.error("Error fetching data:", error);
+      alert("An error occurred while fetching books.");
     });
-  }
+}
+
+// Function to display books
+function displayBooks(books) {
+  const resultsContainer = document.getElementById("bookResults");
+  
+  // Clear previous results
+  resultsContainer.innerHTML = "";
+
+  // Loop through the books and display them
+  books.forEach(book => {
+    const bookItem = document.createElement("div");
+    bookItem.classList.add("book-item");
+
+    const bookTitle = book.title ? book.title : "Untitled";
+    const bookAuthor = book.author_name ? book.author_name.join(", ") : "Unknown Author";
+    const bookCover = book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : "https://via.placeholder.com/150";
+    
+    bookItem.innerHTML = `
+      <img src="${bookCover}" alt="Book Cover">
+      <h3>${bookTitle}</h3>
+      <p><strong>Author:</strong> ${bookAuthor}</p>
+    `;
+    
+    resultsContainer.appendChild(bookItem);
+  });
+}
+
+
+
 
   
 

@@ -185,151 +185,177 @@ html,body {
     }
   }
   
+
   
-  
-  /*==================HEADER======================*/
-/*==================HEADER======================*/
 /*==================HEADER======================*/
 
 header {
-    height: 100vh; /* Full height for the header */
-    width: 100%; /* Full width */
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    background-color: transparent; /* Dark background */
-  }
-  
-  .container1 {
-    width: 100%;
-    max-width: 1200px; /* Prevent stretching on large screens */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    padding: 25px;
-    box-sizing: border-box;
-    text-align: center;
-  }
-  
-  /*==================SEARCH BAR=====================*/
-  
-  .inner-container {
-    width: 100%;
-    max-width: 600px;
-    padding: 20px;
-    background-color: transparent;
-    border-radius: 8px;
-  }
-  
-  /* Title Styling */
-  .inner-container h1 {
-    font-size: 2rem;
-    color: #87ceeb; /* Matching your theme color */
-    margin-bottom: 20px;
-  }
-  
-  /* Search bar styling */
-  .search-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  input[type="text"] {
-    width: 70%;
-    padding: 12px 15px;
-    font-size: 1rem;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-    outline: none;
-    transition: border-color 0.3s ease;
-  }
-  
-  /* Input focus state */
-  input[type="text"]:focus {
-    border-color: #003399; /* Highlight with your theme color */
-  }
-  
-  /* Button styling */
-  button {
-    padding: 12px 20px;
-    font-size: 1rem;
-    background-color: #003399;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* Button hover effect */
-  button:hover {
-    background-color: #002266;
-  }
-  
-  /*==================BOOK RESULTS=====================*/
-  
+  height: 100vh; /* Full height for the header */
+  width: 100%; /* Full width */
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+
+  background:url(images/pexels-joshsorenson-990432.jpg) ; /* Dark background */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container1 {
+  width: 100%;
+  max-width: 1200px; /* Prevent stretching on large screens */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding: 25px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/*==================SEARCH BAR=====================*/
+
+.inner-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+/* Title Styling */
+.inner-container h1 {
+  font-size: 2rem;
+  color: #ffffff; /* Matching your theme color */
+  margin-bottom: 20px;
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus state */
+input[type="text"]:focus {
+  border-color: #003399; /* Highlight with your theme color */
+}
+
+/* Button styling */
+button {
+  padding: 12px 20px;
+  font-size: 1rem;
+  background-color: #003399;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+button:hover {
+  background-color: #002266;
+}
+
+/*==================BOOK RESULTS=====================*/
+
+#bookResults {
+  margin-top: 30px;
+  width: 90%;
+  max-width: 1200px;
+  height: auto; /* Allow it to expand dynamically */
+  display: grid;
+  /*background: rgba(0, 0, 0, 0.4);*/
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: minmax(150px, auto); /* Ensures uniform row height */
+  gap: 15px;
+  justify-content: center;
+  align-content: start;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-y: auto; /* Keeps scrolling */
+  max-height: 75vh; /* Slightly increased for better visibility */
+}
+
+.book-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  max-width: 160px;
+  min-height: 200px; /* Ensures uniform height */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-item:hover {
+  transform: scale(1.05);
+}
+
+.book-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.book-item h3 {
+  font-size: 1rem;
+  color: #003399;
+  font-weight: bold;
+}
+
+.book-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: auto; /* Pushes text downward */
+}
+
+/*==================MEDIA QUERIES FOR RESPONSIVENESS======================*/
+
+@media (max-width: 768px) {
   #bookResults {
-    margin-top: 30px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 20px;
-    justify-items: center;
-    padding: 0 15px;
-  }
-  
-  .book-item {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     padding: 15px;
-    text-align: center;
-    background-color: #f9f9f9;
-    max-width: 200px; /* Limit book item width */
   }
-  
+
+  .book-item {
+    max-width: 140px;
+    min-height: 180px; /* Slightly smaller on smaller screens */
+    padding: 10px;
+  }
+
   .book-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 10px;
+    height: 100px;
   }
-  
-  .book-item h3 {
-    font-size: 1.2rem;
-    color: #003399;
-  }
-  
-  .book-item p {
-    font-size: 1rem;
-    color: #555;
-  }
-  
-  /*==================MEDIA QUERIES FOR RESPONSIVENESS======================*/
-  
-  /* Adjust layout on smaller screens */
-  @media (max-width: 768px) {
-    .search-bar {
-      flex-direction: column;
-    }
-  
-    input[type="text"] {
-      width: 80%;
-      margin-bottom: 10px;
-    }
-  
-    button {
-      width: 80%;
-    }
-  }
-  
+}
+
+
+
+
+
 
   
   /*============================Alert Box===============================*/
@@ -345,9 +371,9 @@ header {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    min-height: 300px;
+    min-height: 260px;
   background-color: #28282b;
-    color: #FFC857;
+    color: #FFffff;
     padding: 27px;
   }
   
@@ -449,64 +475,154 @@ header {
       padding: 8px 18px; /* Adjust padding for better proportion */
     }
   }
-  
-  /*===========RANDOM QUOTE SECTION=========*/
-  
- /* Styling for the quote container */
-.quote-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+
+
+   /*===========QUOTE OF THE MOMENT SECTION=========*/
+   /* Grid Container */
+.quotes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 900px;
+  margin: 30px auto;
 }
 
-/* Styling the quote button */
+/* Quote of the Moment & Quote Container */
+.quoteofthemoment, .quote-container {
+  text-align: center;
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.quoteofthemoment h1 {
+  font-size: 26px;
+}
+/* Quote Content */
+.quoteofthemoment p, .quote-container p {
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Button Icons */
 #quoteButton {
-    padding: 10px 20px;
-    background-color: #003399;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  transition: 0.3s;
 }
 
-/* Button hover effect */
-#quoteButton:hover {
-    background-color: #002266;
+#sync-icon:hover {
+  color: #ffd700;
+  transform: rotate(15deg);
+  cursor: pointer;
 }
 
-/* Styling for the displayed quote */
-#quoteDisplay {
-    margin-top: 20px;
-    font-size: 1.2rem;
-    font-style: italic;
-    color: #333;
-    text-align: center;
+
+/* Quote Actions (Like, Save, Share Buttons) */
+.quote-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.action-btn:hover {
+  color: #ffd700;
+  background-color: transparent;
+  border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .quotes-grid {
+      grid-template-columns: 1fr;
+      padding: 25px;
+  }
 }
 
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  /* =========================Favourites Section================ */
+.favorite-container {
+  background: #1a1a1a;
+  color: white;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 100%;
+  margin: 30px auto;
+}
+
+/* Header Styling */
+.favorite-container h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Quotes Flexbox */
+.favorite-quotes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  overflow-x: auto; /* Enables horizontal scrolling if too many quotes */
+  padding: 10px;
+}
+
+/* Individual Quote Box */
+.favorite-quote {
+  background: #292929;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+  text-align: center;
+  min-width: 250px;
+  flex: 1; /* Makes all quotes evenly spaced */
+  max-width: 300px;
+  transition: 0.3s;
+}
+
+.favorite-quote:hover {
+  background: #333;
+  transform: scale(1.05);
+}
+
+/* Quote Text */
+.favorite-quote p {
+  font-size: 16px;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+/* Author Name */
+.favorite-quote span {
+  font-size: 14px;
+  color: #ffd700;
+}
+
   
   /*===========INVITATION SECTION=========*/
   
   .contact-container {
-    background-image: url('images/pexels-technobulka-2908984.jpg'); /* Fixed file path for better readability */
+    background-image:url(images/pexels-joshsorenson-990432.jpg);
     background-repeat: no-repeat; /* Prevent tiling */
     background-size: cover; /* Cover the full header area */
     background-position: center; /* Center the image */
@@ -533,9 +649,10 @@ header {
     min-height: 210px;
     padding: 5px;
     /*border: 2px solid #fff;*/
-    /*background: rgba(0, 0, 0, 0.4); *//* Add semi-transparent background for contrast */
+    /*background: rgba(255, 255, 255, 0.25); /* Add semi-transparent background for contrast */
     border-radius: 12px; /* Rounded corners for better appearance */
     color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5), -1px -1px 2px rgba(0, 0, 0, 0.5), 1px -1px 2px rgba(0, 0, 0, 0.5), -1px 1px 2px rgba(0, 0, 0, 0.5);
     
   }
   
@@ -558,10 +675,10 @@ header {
     }
   
     .contact-header h1{
-      font-size: 20px;
+      font-size: 25px;
     }
     .contact-header p{
-      font-size: 15px;
+      font-size: 18px;
     }
   }
   
@@ -575,7 +692,7 @@ header {
       font-size: 17px;
     }
     .contact-header p{
-      font-size: 12px;
+      font-size: 10px;
     }
   }
   
@@ -781,7 +898,7 @@ header {
   /*==================================================ABOUT PAGE CSS===================================================*/
   
   .About-service-intro {
-    background-image: url('images/new\ background\ .jpg'); /* Fixed file path for better readability */
+    background-image: url('images/library.jpg'); /* Fixed file path for better readability */
     background-repeat: no-repeat; /* Prevent tiling */
     background-size: cover; /* Cover the full header area */
     background-position: center; /* Center the image */
@@ -806,8 +923,6 @@ header {
     font-size: 17px;
     min-height: 210px;
     padding: 5px;
-    /*border: 2px solid #fff;*/
-    /*background: rgba(0, 0, 0, 0.4); *//* Add semi-transparent background for contrast */
     border-radius: 12px; /* Rounded corners for better appearance */
     color: #fff;
     
@@ -817,185 +932,43 @@ header {
     font-size: 26px;
     margin-bottom: 0px;
   }
-  /*
-  .About-service-intro-container p {
-    font-size: 19px;
-    line-height: 1.5; /* Improve readability */
   
   
   
   
-  
-  
-  
-  
-    /*==============================================PROJECTS PAGE CSS===================================================*/
-  
-    .line-container{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      transform: translateX(-50%); /* Centers the line horizontally */
-      z-index: 1; /* Ensure the line is above other elements */
-    }
-  
-    .project-service-intro {
-      background-image: url('images/projects\ 006.jpg'); /* Fixed file path for better readability */
-      background-repeat: no-repeat; /* Prevent tiling */
-      background-size: cover; /* Cover the full header area */
-      background-position: center; /* Center the image */
-      margin: 0;
-      padding: 10px;
-      width: 100%;
-      min-height: 250px;
-      display: flex; /* Enable flexbox */
-      justify-content: center; /* Center horizontally */
-      align-items: center; /* Center vertically */
-     /*border: 2px solid #003399;*/
-    }
-    
-    .project-service-intro-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center; /* Center text inside */
-      width: 85%; /* Responsive width */
-      max-width: 700px; /* Restrict maximum width */
-      font-size: 17px;
-      min-height: 210px;
-      padding: 5px;
-      /*border: 2px solid #fff;*/
-      /*background: rgba(0, 0, 0, 0.4); *//* Add semi-transparent background for contrast */
-      border-radius: 12px; /* Rounded corners for better appearance */
-      color: #fff;
-      
-    }
-    
-    .project-service-intro-container h1 {
-      font-size: 26px;
-      margin-bottom: 0px;
-    }
-    /*
-    .About-service-intro-container p {
-      font-size: 19px;
-      line-height: 1.5; /* Improve readability */
-  
-    .vertical-line {
-      border-left: 2px solid #87ceeb; /* Color and thickness of the line */
-      border-radius: 20px;
-      height: 2000px; /* Full screen height */
-    }
-  
-    .projects_container{
-      display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns, one for each side */
-    gap: 40px;
-    padding: 20px;
-    margin-top: 10px;
-    position: relative; /* Needed for positioning the vertical line */
-    }
-  
-  
-  
-    .projects_left{
-    background-image: url(images/projects\ 004.webp); /* Replace with your image path */
-    background-repeat: no-repeat; /* Prevent tiling */
-    background-size: cover; /* Cover the full header area */
-    background-position: center; /* Center the image */
-  
-      margin: 25px;
-        padding: 20px;
-        height: 220px;
-        cursor:pointer;
-        border-radius: 8px;
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Initial shadow */
-        
-    }
-  
-    .projects_left:hover {
-      transform: translateY(-5px) ;
-      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */ 
-      box-shadow: 0 0 20px #87ceeb; 
-  
-    }
-  
-    .projects_right{
-      background-image: url(images/projects\ 004.webp); /* Replace with your image path */
-    background-repeat: no-repeat; /* Prevent tiling */
-    background-size: cover; /* Cover the full header area */
-    background-position: center; /* Center the image */
-  
-      margin: 25px;
-        padding: 20px;
-        height: 220px;
-        cursor: pointer;
-        border-radius: 8px;
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Initial shadow */
-        
-        
-        
-    }
-  
-    .projects_right:hover {
-      transform: translateY(-5px) ;
-      box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */ 
-      box-shadow: 0 0 20px #87ceeb; 
-     
-  
-    }
-  
-  
-    @media (max-width: 1024px) {
-      .projects_container {
-        grid-template-columns: 1fr; /* Stack left and right grids */
-        gap: 20px;
-        left: 30px;
-      }
-     
-      .projects_left, .projects_right {
-        height: 180px; /* Adjust height for smaller screens */
-        width: 70%;
-        left: 50px;
-        margin: 15px; /* Adjust margins for smaller screens */
-      }
-      /* Move the vertical line to the left side when in one column */
-      .line-container {
-        left: 0%; /* Adjust position to the left */
-        transform: translateX(0%); /* Remove horizontal centering */
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .projects_container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        
-      }
-      .projects_left, .projects_right {
-        
-        height: 160px; /* Further reduce height for smaller devices */
-        width: 65%;
-        margin: 10px; /* Adjust margins for better fit */
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .projects_container {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        
-      }
-      .projects_left, .projects_right {
-        
-        height: 140px; /* Further reduce height */
-        width: 60%;
-        margin: 8px; /* Adjust margins for smaller screens */
-      }
-    }
+ /* General About Page Styling */
+.about-books, .about-quotes {
+  background: #1a1a1a; /* Dark theme background */
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  margin: 30px auto;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Headings */
+.about-books h1, .about-quotes h1 {
+  font-size: 28px;
+  color: #ffd700; /* Gold accent for emphasis */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Paragraph Styling */
+.about-books p, .about-quotes p {
+  font-size: 18px;
+  line-height: 1.8;
+  text-align: justify;
+  color: #cccccc; /* Softer white for readability */
+}
+
+/* Layout: Making sections stack neatly */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
