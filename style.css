@@ -898,7 +898,7 @@ button:hover {
   /*==================================================ABOUT PAGE CSS===================================================*/
   
   .About-service-intro {
-    background-image: url('images/library.jpg'); /* Fixed file path for better readability */
+    background-image: url('images/pexels-repuding-12064.jpg'); /* Fixed file path for better readability */
     background-repeat: no-repeat; /* Prevent tiling */
     background-size: cover; /* Cover the full header area */
     background-position: center; /* Center the image */

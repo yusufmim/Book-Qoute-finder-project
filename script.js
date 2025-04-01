@@ -62,46 +62,127 @@ function displayBooks(books) {
   //RANDOM QUOTES 
 
   // JavaScript to fetch a random quote
-document.getElementById('quoteButton').addEventListener('click', fetchRandomQuote);
+  document.addEventListener("DOMContentLoaded", () => {
+    const quoteButton = document.getElementById("quoteButton");
+    const quoteDisplay = document.getElementById("quoteDisplay");
 
-function fetchRandomQuote() {
-    fetch('https://github.com/lukePeavey/quotable')
-        .then(response => response.json())
-        .then(data => {
-            const quoteText = data.content;
-            const author = data.author;
+    async function fetchQuotes() {
+        try {
+            const response = await fetch("http://localhost:3001/quotes"); // Adjust if API URL is different
+            const quotes = await response.json();
+            return quotes;
+        } catch (error) {
+            console.error("Error fetching quotes:", error);
+            return [];
+        }
+    }
 
-            // Display the fetched quote and author
-            document.getElementById('quoteDisplay').textContent = `"${quoteText}" - ${author}`;
-        })
-        .catch(error => {
-            console.error('Error fetching quote:', error);
-            document.getElementById('quoteDisplay').textContent = 'Oops! Something went wrong. Please try again.';
-        });
-}
+    async function displayRandomQuote() {
+        const quotes = await fetchQuotes();
+        if (quotes.length > 0) {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+            quoteDisplay.textContent = `"${randomQuote.text}" - ${randomQuote.author}`;
+        } else {
+            quoteDisplay.textContent = "No quotes available.";
+        }
+    }
+
+    quoteButton.addEventListener("click", displayRandomQuote);
+});
+
 
 //SIGN UP PAGE CODE
 
 function toggleForm() {
   const signUpForm = document.getElementById("sign-up-form");
   const signInForm = document.getElementById("sign-in-form");
+  const userDisplay = document.getElementById("userDisplay");
 
-  if (signUpForm.style.display === "none") {
-      signUpForm.style.display = "block";
-      signInForm.style.display = "none";
-  } else {
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedIn"));
+
+  if (loggedInUser) {
+      // User is already signed in
       signUpForm.style.display = "none";
-      signInForm.style.display = "block";
+      signInForm.style.display = "none";
+      userDisplay.innerHTML = `Welcome, ${loggedInUser.email}!`;
+      userDisplay.style.display = "block";
+  } else {
+      // Toggle between sign-up and sign-in forms
+      if (signUpForm.style.display === "none") {
+          signUpForm.style.display = "block";
+          signInForm.style.display = "none";
+      } else {
+          signUpForm.style.display = "none";
+          signInForm.style.display = "block";
+      }
   }
 }
 
-// Handle form submission for Sign In
-document.getElementById("signin").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the form from submitting the traditional way
+// Run on page load to check if the user is logged in
+document.addEventListener("DOMContentLoaded", toggleForm);
+
+
+//SIGN UP
+
+document.getElementById("signup").addEventListener("submit", function(event) {
+  event.preventDefault();
 
   const email = event.target.querySelector("input[type='email']").value;
   const password = event.target.querySelector("input[type='password']").value;
 
-  // Here, you can add code to send the login data to the server
-  alert(`Signed in with email: ${email}, password: ${password}`);
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // Check if user already exists
+  const userExists = users.find(user => user.email === email);
+  if (userExists) {
+      alert("User already exists! Please sign in.");
+      return;
+  }
+
+  // Save new user
+  users.push({ email, password });
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Sign-up successful! You can now sign in.");
+  event.target.reset(); // Clear form
+});
+
+//SIGN IN 
+
+document.getElementById("signin").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const email = event.target.querySelector("input[type='email']").value;
+  const password = event.target.querySelector("input[type='password']").value;
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // Find the user
+  const user = users.find(user => user.email === email && user.password === password);
+
+  if (user) {
+      localStorage.setItem("loggedIn", JSON.stringify(user));
+      alert("Sign-in successful! Welcome back.");
+      window.location.reload(); // Reload page to update UI
+  } else {
+      alert("Invalid credentials! Please try again.");
+  }
+});
+
+//LOG OUT
+
+document.getElementById("logoutButton").addEventListener("click", function() {
+  localStorage.removeItem("loggedIn");
+  alert("You have been logged out.");
+  window.location.reload(); // Refresh to show sign-in form again
+});
+
+// Show logout button if user is logged in
+document.addEventListener("DOMContentLoaded", function() {
+  const loggedInUser = JSON.parse(localStorage.getItem("loggedIn"));
+  const logoutButton = document.getElementById("logoutButton");
+
+  if (loggedInUser) {
+      logoutButton.style.display = "block";
+  }
 });
